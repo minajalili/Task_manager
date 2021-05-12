@@ -1,11 +1,17 @@
+@mixin fontStyle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #574c4c;
+}
+
 .TaskBar{
-    border-radius: 40px 0 0 0;
+    border-radius: 30px 0 0 30px;
     background: #eaeef0;
     box-shadow: inset 0px 0px 18px rgba(187, 202, 213, 0.9);
     border-right: 1px solid #c6c6c6;
-
     display: flex;
     flex-direction: column;
+    height: 97%;
 
     
     .UserUi{
@@ -13,18 +19,134 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1.5rem;
+        border-bottom: 1px solid #c6c6c6;
 
         .user--pic{
             
             
             img{
-                width: 150px; 
-                height: 100px;
+                width: 50px; 
+                height: 50px;
+                object-fit: cover;
                 border-radius: 10px;
+            }
+        }
+
+        .user--detail{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 0 0.5rem ;
+
+            p{
+                font-size: 12px;
+                color: grey;
+            }
+            h3{
+                @include fontStyle();
             }
         }
 
     }
     
+
+    .TaskMenu{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        border-radius: 40px;
+        background: #f0f0f0;
+        box-shadow:6px 9px 10px rgba(187, 202, 213, 0.9);
+        width: 90%;
+        margin: 1rem;
+
+        .addTasks{
+             
+            button{
+                border-radius: 40px;
+                border: none;
+                padding: 0.4rem 0.7rem;
+                box-shadow:1px 9px 10px rgba(187, 202, 213, 0.9);
+                background: #f0f0f0;
+
+                i{
+                    border-radius: 100%;
+                    background:#e6e7eb;
+                    padding: 0.5rem;
+                    color: #808297;
+                    font-size: 10px;
+                }
+
+                span{
+                    padding: 0.3rem;
+                    @include fontStyle();
+                }
+            }
+        }
+
+        .TasksList{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 0.5rem;
+            
+
+            .Task{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+
+                .TaskDetail{
+                    padding: 0.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    p{
+                        @include fontStyle();
+                    }
+                    span{
+                        @include fontStyle();
+                        font-size: 9px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    .CompletedTasks{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        border-radius: 40px;
+        background: #f0f0f0;
+        box-shadow:6px 9px 10px rgba(187, 202, 213, 0.9);
+        width: 90%;
+        margin: 1rem;
+
+        .CompeleteBtn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            p{
+                @include fontStyle();
+            }
+            i{
+                border-radius: 100%;
+                background:#e6e7eb;
+                padding: 0.5rem;
+                color: #808297;
+                font-size: 10px;
+
+            }
+        }
+    }
 }

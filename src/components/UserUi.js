@@ -13,8 +13,11 @@ function UserUi(){
             </div>
             <div className="user--detail" >
                 <p>
-                    test
+                    Good morning,
                 </p>
+                <h3>
+                nate!
+                </h3>
             </div>
         </div>
     )
