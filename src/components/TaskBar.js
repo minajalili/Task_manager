@@ -1,12 +1,14 @@
 import React from 'react';
 import './TaskBar.scss'
+import UserUi from './UserUi'
 
 function TaskBar(){
 
 
     return(
         <div className="TaskBar">
-            <h1>TaskBar</h1>
+            <UserUi />
+            
         </div>
     )
 }
