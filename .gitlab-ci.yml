@@ -1,0 +1,8 @@
+pages:
+    stagge: deploy
+    iamge: node
+    script:
+      - npm run build
+    artifacts:
+    paths:
+      - build
