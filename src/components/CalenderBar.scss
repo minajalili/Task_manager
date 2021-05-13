@@ -1,7 +1,128 @@
+@mixin fontStyle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #574c4c;
+}
+
 .CalenderBar{
 
-    border-radius: 0 40px 0 0;
+    border-radius: 0 30px 15px 15px;
     background: #eaeef0;
-    box-shadow: inset 0px 0px 18px rgba(187, 202, 213, 0.9);
+    box-shadow: 0px 0px 18px rgba(187, 202, 213, 0.9);
+    border-bottom: 2px solid #eff2f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .Calender--detail{
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        
+        .Current--Month{
+            h1{
+                @include fontStyle;
+                font-size: 16px;
+            }
+        }
+
+        .Current--date{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h5{
+                @include fontStyle;
+            }   
+            p{
+                @include fontStyle;
+                font-size: 10px;
+                color: gray;
+            }
+        }
+
+        .Search--Item{
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 10rem;
+                border-radius: 40px;
+                border: none;
+                padding: 0.4rem 0.7rem;
+                box-shadow:1px 9px 10px rgba(187, 202, 213, 0.9);
+                background: #e1e5ee;
+                border: 2px solid #e9edf2;
+
+                i{
+                    border-radius: 100%;
+                    background:#d8dbe3;
+                    padding: 0.5rem;
+                    color: #808297;
+                    font-size: 10px;
+                }
+
+                span{
+                    padding: 0.3rem;
+                    @include fontStyle;
+                    color: gray;
+                }
+            }
+        }
+    }
     
+    .Calender--mode{
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        
+
+        i{
+            border-radius: 100%;
+            background:#e6e7eb;
+            padding: 0.5rem;
+            color: #808297;
+            font-size: 10px;
+            margin: 0.1rem 0.4rem;
+        }
+        button{
+            border-radius: 40px;
+            border: none;
+            padding: 2px 8px;
+            box-shadow:1px 9px 10px rgba(187, 202, 213, 0.9);
+            background: #f0f0f0;
+            @include fontStyle;
+            color: gray;
+            font-size: 10px;
+            margin: 0.1rem;
+        }
+        .Calender--mode--month{
+            border: 1px solid #fcc1a3;
+            background: #f29765;
+            color: white;
+
+        }
+    }
+
+    .Calender--days{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        background: #e4e9ec;
+        border-radius: 15px;
+        
+        p{
+            @include fontStyle;
+            color: gray;
+            margin: 0 1.8rem;
+        }
+    }
 }

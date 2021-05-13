@@ -81,7 +81,7 @@
 
                 span{
                     padding: 0.3rem;
-                    @include fontStyle();
+                    @include fontStyle;
                 }
             }
         }
@@ -108,10 +108,10 @@
                     justify-content: space-between;
 
                     p{
-                        @include fontStyle();
+                        @include fontStyle;
                     }
                     span{
-                        @include fontStyle();
+                        @include fontStyle;
                         font-size: 9px;
                         font-weight: normal;
                     }
@@ -137,7 +137,7 @@
             justify-content: space-between;
             width: 100%;
             p{
-                @include fontStyle();
+                @include fontStyle;
             }
             i{
                 border-radius: 100%;
