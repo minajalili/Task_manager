@@ -14,6 +14,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 23;
+    position: relative;
 
     .Calender--detail{
         width: 95%;
@@ -114,8 +116,8 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 1rem 0;
+        justify-content: space-between;
+        padding: 1rem;
         background: #e4e9ec;
         border-radius: 15px;
         
