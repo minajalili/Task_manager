@@ -149,4 +149,83 @@
             }
         }
     }
+
+    .ModalTask{
+        width: 25vw;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        background: #eaeef0;
+        border-radius: 40px;
+        border: 3px solid #d5dadf;
+        box-shadow: 5px 5px 28px rgba(93, 96, 99, 0.9);
+        z-index: 100;
+        top: 25%;
+        left: 40%;
+        transition: all 0.3s ease-out;
+
+        .TaskCancel{
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+            
+
+                i{
+                    border-radius: 100%;
+                    background: #dedfe6;
+                    padding: 0.5rem 0.6rem;
+                    color: #808297;
+                    font-size: 14px;
+                }
+
+            
+        }
+
+        .inputTask{
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+
+            input{
+                border-radius: 10px;
+                border: 1px solid #bbb;
+                padding: 0.4rem 0.7rem;
+                box-shadow: 5px 6px 8px rgba(187, 202, 213, 0.9);
+                background: #f0f0f0;
+                width: 80%;
+                @include fontStyle;
+            }
+        }
+
+        .btnTask{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 7rem;
+                border-radius: 10px;
+                border: none;
+                padding: 0.4rem 0.7rem;
+                box-shadow: 1px 9px 10px rgba(187, 202, 213, 0.9);
+                background: #d7dce6;
+                border: 2px solid #e6e6e6;
+                margin: 0.5rem;
+                @include fontStyle;
+            }
+        }
+
+
+
+
+
+    }
 }

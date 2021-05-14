@@ -5,6 +5,7 @@ import './TaskBar.scss'
 import UserUi from './UserUi'
 import TaskMenu from './TaskMenu'
 import CompeletedTasks from './CompeletedTasks';
+import ModalTask from './ModalTask';
 
 
 function TaskBar(){
@@ -15,6 +16,7 @@ function TaskBar(){
             <UserUi />
             <TaskMenu />
             <CompeletedTasks />
+            <ModalTask />
             
         </div>
     )
