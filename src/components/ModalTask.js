@@ -20,7 +20,7 @@ function ModalTask(){
           }
           axios.post('https://6099176399011f00171401cb.mockapi.io/task', task)
           .then((response) => {
-            console.log(response);
+            //console.log(response);
           }, (error) => {
             console.log(error);
           });

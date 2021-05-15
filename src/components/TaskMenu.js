@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useDispatch,useSelector } from 'react-redux'
 
-import { TaskListShow,TaskListHidden } from '../action/TaskListToggle'
+import { TaskAction, TaskListUpdater } from '../action/TaskAction'
 
 //action
 import { ModalVisible } from '../action/ModalAction'
@@ -10,9 +10,28 @@ import { ModalVisible } from '../action/ModalAction'
 import './TaskBar.scss'
 
 function TaskMenu(){
-
+    
     const dispatch = useDispatch()
     const ToggleList = useSelector((state)=> state.ToggleTaskList)
+    const TasksList = useSelector((state)=>state.TasksList)
+    const {loading, tasks} = TasksList
+    
+
+    useEffect(()=>{
+        dispatch(TaskAction())
+    },[dispatch])
+
+    useEffect(()=>{
+        dispatch(TaskListUpdater(tasks))
+    },[dispatch, tasks])
+
+    const TaskChecked = (e)=>{
+        tasks.map((task)=>{
+            if(task.id === e.target.id){
+                task.done = true
+            }
+        })
+    }
 
     return(
         <div className="TaskMenu">
@@ -27,13 +46,23 @@ function TaskMenu(){
                 display: ToggleList? 'flex':'none'
             }}
             >
-                <div className="Task">
-                    <input className="TaskCheck" type="radio" />
-                    <div className="TaskDetail">
-                        <p className="TaskName">Book Return Ticket</p>
-                        <span className="TaskTime">Today</span>
-                    </div>
-                </div>
+            {
+                loading? 
+                    <p> loading...</p> :
+                    tasks.map((task)=>( 
+                        !task.done?
+                        <div className="Task" key={task.id}>
+                            <input className="TaskCheck" type="radio" onChange={ TaskChecked } id={task.id}/>
+                            <div className="TaskDetail">
+                                <p className="TaskName">{ task.name }</p>
+                                <span className="TaskTime">{ task.date }</span>
+                            </div>
+                        </div>:''
+                    ))
+                
+            }
+            
+                
             </div>
         </div>
     )
