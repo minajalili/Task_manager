@@ -15,10 +15,8 @@ function CalenderBar(){
                     <p>18, Mon</p>
                 </div>
                 <div className="Search--Item">
-                    <button>
-                        <i className="fas fa-search" ></i>
-                        <span>Search</span>
-                    </button>
+                    <i className="fas fa-search" ></i>
+                    <input type="text" placeholder="search"/>
                 </div>
             </div>
             <div className="Calender--mode">

@@ -1,15 +1,16 @@
 import React from 'react';
-//styles
-import './TaskBar.scss'
+
 //components
 import UserUi from './UserUi'
 import TaskMenu from './TaskMenu'
-import CompeletedTasks from './CompeletedTasks';
-import ModalTask from './ModalTask';
+import CompeletedTasks from './CompeletedTasks'
+import ModalTask from './ModalTask'
+
+//styles
+import './TaskBar.scss'
 
 
 function TaskBar(){
-
 
     return(
         <div className="TaskBar">
