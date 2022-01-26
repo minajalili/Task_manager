@@ -1,0 +1,2 @@
+export const TASK_LIST_SHOW = 'TASK_LIST_SHOW'
+export const TASK_LIST_HIDDEN = 'TASK_LIST_HIDDEN'

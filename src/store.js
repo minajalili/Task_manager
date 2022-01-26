@@ -1,12 +1,15 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
-import { ModalVisibilityReducer , ToggleTaskListReducer} from './reducer/VisibilityControlsReducer'
-import { TasksListReducer } from './reducer/TaskReducer'
+
+import TaskListReducer from './store/TaskList/TaskListReducer';
+import TaskReducer from "./store/Task/TaskReducer"
+import ModalTaskReducer from "./store/ModalTask/ModalTaskReducer"
+
 
 const reducer = combineReducers({
-    ModalVisibility : ModalVisibilityReducer,
-    ToggleTaskList: ToggleTaskListReducer,
-    TasksList:TasksListReducer,
+    ModalVisibility : ModalTaskReducer,
+    ToggleTaskList: TaskReducer,
+    TasksList:TaskListReducer,
 
 })
 const initialState = {}
