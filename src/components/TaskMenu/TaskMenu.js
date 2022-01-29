@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 //action
-import { ModalVisible, TaskAction, TaskListUpdater } from "../../store/Actions";
+import { ModalVisible, getTasksList } from "../../store/Actions";
 
 //style
 import "../../assets/styles/TaskBar.scss";
@@ -11,16 +11,12 @@ function TaskMenu() {
   const dispatch = useDispatch();
   const ToggleList = useSelector((state) => state.ToggleTaskList);
   const TasksList = useSelector((state) => state.TasksList);
-  console.log(TasksList);
   const { loading, tasks } = TasksList;
 
   useEffect(() => {
-    dispatch(TaskAction());
+    dispatch(getTasksList());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(TaskListUpdater(tasks));
-  }, [dispatch, tasks]);
 
   const TaskChecked = (e) => {
     tasks.map((task) => {
@@ -36,6 +32,7 @@ function TaskMenu() {
         <button
           onClick={() => {
             dispatch(ModalVisible);
+            console.log("add task");
           }}
         >
           <i className="fas fa-plus"></i>

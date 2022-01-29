@@ -1,44 +1,71 @@
 import * as actions from "./TaskActionTypes";
-import axios from "axios";
+import axios from "../../api/axios";
 
-
-export const taskRequest = () => {
+//TASK
+export const taskListRequest = () => {
   return {
     type: actions.TASK_LIST_REQUEST,
   };
 };
-export const taskRequestSuccess = (tasks) => {
+export const taskListSuccess = (tasks) => {
   return {
     type: actions.TASK_LIST_SUCCESS,
     payload: tasks,
   };
 };
-export const taskRequestFailur = (error) => {
+export const taskListFailur = (error) => {
   return {
     type: actions.TASK_LIST_FAILUR,
     payload: error,
   };
 };
-export const taskRequestDone = (tasks) => {
-    return {
-      type: actions.TASK_LIST_DONE,
-      payload: tasks,
-    };
-  };
-export const TaskAction = () => async (dispatch) => {
+export const getTasksList = () => async (dispatch) => {
   try {
-    dispatch(taskRequest);
+    dispatch(taskListRequest);
 
-    const { data } = await axios.get(
-      "https://6099176399011f00171401cb.mockapi.io/task"
-    );
+    const { data } = await axios.get("task");
 
-    dispatch(taskRequestSuccess(data));
+    dispatch(taskListSuccess(data));
   } catch (error) {
-    dispatch(taskRequestFailur(error.message));
+    dispatch(taskListFailur(error.message));
     // console.log(error);
   }
 };
-export const TaskListUpdater = (tasks) => async (dispatch) => {
-  dispatch(taskRequestDone(tasks));
+
+//CREATE TASK
+export const createTaskRequest = () => {
+  return {
+    type: actions.CREATE_TASK_REQUEST,
+  };
+};
+export const createTaskSuccess = (tasks) => {
+  return {
+    type: actions.CREATE_TASK_SUCCESS,
+    payload: tasks,
+  };
+};
+export const createTaskFailur = (error) => {
+  return {
+    type: actions.CREATE_TASK_FAILUR,
+    payload: error,
+  };
+};
+
+export const createTask = (params) => {
+  return (dispatch) => {
+    dispatch(createTaskRequest());
+    axios
+      .post("task", params)
+      .then((response) => {
+        // console.log(response);
+        if (!response.data.error) {
+          dispatch(getTasksList);
+        } else {
+          dispatch(createTaskFailur("error in creating the task!"));
+        }
+      })
+      .catch((error) => {
+        dispatch(createTaskFailur(error.message));
+      });
+  };
 };

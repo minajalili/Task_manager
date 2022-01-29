@@ -1,6 +1,4 @@
 import axios from "axios"
-
-import axios from "axios";
 import { toast } from 'react-toastify';
 
 const api_url = 'https://6099176399011f00171401cb.mockapi.io/'

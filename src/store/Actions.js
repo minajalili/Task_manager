@@ -12,10 +12,12 @@ export {
 
 //TaskList
 export {
-    TaskAction,
-    TaskListUpdater,
-    taskRequestDone,
-    taskRequestFailur,
-    taskRequestSuccess,
-    taskRequest
+    getTasksList,
+    createTask,
+    taskListRequest,
+    taskListSuccess,
+    taskListFailur,
+    createTaskRequest,
+    createTaskSuccess,
+    createTaskFailur,
 } from "./Task/TaskActions"

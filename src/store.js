@@ -12,9 +12,8 @@ const reducer = combineReducers({
     TasksList:TaskReducer,
 
 })
-const initialState = {}
 const middleWare = [thunk]
 
-const store = createStore(reducer, initialState, applyMiddleware(...middleWare))
+const store = createStore(reducer, applyMiddleware(...middleWare))
 
 export default store;

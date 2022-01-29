@@ -32,7 +32,7 @@ in src directory, project have 2 folder with this name **action** and **reducer*
 ### action
 
  - **ModalAction** // show or hide Task modal
- - **TaskAction** // get data from api and update task content
+ - **getTasksList** // get data from api and update task content
  - **TaskListToggle** // toggle between completed task and not completed
 
   ### reducer 

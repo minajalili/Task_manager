@@ -19,18 +19,29 @@ const TasksListReducer = (state = initialState, action) => {
         loading: false,
         tasks: action.payload,
       };
-    case actions.TASK_LIST_DONE:
-      return {
-        ...state,
-        loading: false,
-        tasks: action.payload,
-      };
     case actions.TASK_LIST_FAILUR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
+      case actions.CREATE_TASK_REQUEST:
+        return {
+          ...state,
+          loading: true,
+        };
+      case actions.CREATE_TASK_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+          tasks: action.payload,
+        };
+      case actions.CREATE_TASK_FAILUR:
+        return {
+          ...state,
+          loading: false,
+          error: action.payload,
+        };
     default:
       return state;
   }
