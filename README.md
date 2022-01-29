@@ -11,8 +11,8 @@ get and post data with API done by [axios](https://www.npmjs.com/package/axios) 
 ## components
 Project have 8 component, The main component after App :
 ### &lt;TaskBar/>
-### &lt;CalenderBar/>
-### &lt;Calender  />
+### &lt;CalendarBar/>
+### &lt;Calendar  />
 
 ## TaskBar
 for showing user data, add new task and displaying Tasks list
@@ -21,10 +21,10 @@ for showing user data, add new task and displaying Tasks list
 &lt;CompeletedTasks  />
 &lt;ModalTask  />
 
-## CalenderBar
+## CalendarBar
 The content of this part includes current date, search button, toggle between month and displaying mood of calendar
 
-## Calender
+## Calendar
 displaying days of month
 
 ## Redux

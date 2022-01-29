@@ -1,9 +1,9 @@
 import { ToastContainer } from 'react-toastify';
-import CalenderBar from './components/CalenderBar';
-import TaskBar from './components/TaskBar';
-import Calender from './components/Calender'
+import CalendarBar from './container/CalendarBar/CalendarBar';
+import TaskBar from './container/TaskBar/TaskBar';
+import Calendar from './container/Calendar/Calendar'
 
-import './assets/styles/app.scss';
+import './assets/styles/App.scss';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
       <div className="tasks">
         <TaskBar/>
       </div>
-      <div className="calender" >
-        <CalenderBar/>
-        <Calender />
+      <div className="Calendar" >
+        <CalendarBar/>
+        <Calendar />
       </div>
     </div>
   );

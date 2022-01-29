@@ -4,7 +4,7 @@
     color: #574c4c;
 }
 
-.CalenderBar{
+.CalendarBar{
 
     border-radius: 0 30px 15px 15px;
     background: #eaeef0;
@@ -17,7 +17,7 @@
     z-index: 23;
     position: relative;
 
-    .Calender--detail{
+    .Calendar--detail{
         width: 95%;
         display: flex;
         align-items: center;
@@ -83,7 +83,7 @@
         }
     }
     
-    .Calender--mode{
+    .Calendar--mode{
         width: 95%;
         display: flex;
         align-items: center;
@@ -124,7 +124,7 @@
                 border-color: rgb(170, 168, 168) ;
             }
         }
-        .Calender--mode--month{
+        .Calendar--mode--month{
             border: 1px solid #fcc1a3;
             background: #f29765;
             color: white;
@@ -132,7 +132,7 @@
         }
     }
 
-    .Calender--days{
+    .Calendar--days{
         width: 100%;
         display: flex;
         align-items: center;

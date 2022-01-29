@@ -1,5 +1,5 @@
 import React from 'react';
-import './TaskBar.scss'
+import '../../assets/styles/TaskBar.scss'
 
 function UserUi(){
 

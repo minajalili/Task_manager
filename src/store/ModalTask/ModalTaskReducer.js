@@ -9,12 +9,12 @@ const ModalVisibilityReducer = (state = initialState, action) => {
     case actions.MODAL_VISIBILITY_SHOW:
       return {
         ...state,
-        visibility= true
+        visibility: true
     };
     case actions.MODAL_VISIBILITY_HIDDEN:
       return {
         ...state,
-        visibility= false
+        visibility: false
     };
     default:
       return state;

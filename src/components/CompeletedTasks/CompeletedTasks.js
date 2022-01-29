@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
-import { TaskListShow,TaskListHidden } from '../action/TaskListToggle'
+import { TaskListShow,TaskListHidden } from '../../store/Actions'
 
 
-import './TaskBar.scss'
+import '../../assets/styles/TaskBar.scss'
 
 function CompeletedTasks(){
  

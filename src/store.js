@@ -8,8 +8,8 @@ import ModalTaskReducer from "./store/ModalTask/ModalTaskReducer"
 
 const reducer = combineReducers({
     ModalVisibility : ModalTaskReducer,
-    ToggleTaskList: TaskReducer,
-    TasksList:TaskListReducer,
+    ToggleTaskList: TaskListReducer,
+    TasksList:TaskReducer,
 
 })
 const initialState = {}

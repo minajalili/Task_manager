@@ -2,9 +2,9 @@ import React , {useState} from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { ModalHidden } from '../action/ModalAction'
+import { ModalHidden } from '../../store/Actions'
 
-import './TaskBar.scss'
+import '../../assets/styles/TaskBar.scss'
 
 function ModalTask(){
     const [TaskName , setTaskName] = useState('')
@@ -20,7 +20,7 @@ function ModalTask(){
           }
           axios.post('https://6099176399011f00171401cb.mockapi.io/task', task)
           .then((response) => {
-            //console.log(response);
+            console.log(response);
           }, (error) => {
             console.log(error);
           });

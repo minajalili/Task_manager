@@ -1,7 +1,7 @@
 import React from 'react';
-import './Calender.scss'
+import '../../assets/styles/Calendar.scss'
 
-function Calender(){
+function Calendar(){
 
  const test =[]
  for(let i=0 ; i<35 ; i++){
@@ -10,15 +10,15 @@ function Calender(){
  
 
     return(
-        <div className="Calender">
+        <div className="Calendar">
             {
                 test.map(item=>(
                     (item>=1)?
-                    <div key={item} id={`day--${item}`} className="Calender-day">
+                    <div key={item} id={`day--${item}`} className="Calendar-day">
                         <p>{item}</p>
                         <p></p>
                     </div>:
-                    <div key={item} id={`day--${item}`} className="Calender-day">
+                    <div key={item} id={`day--${item}`} className="Calendar-day">
                     <p></p>
                     <p></p>
                 </div>
@@ -27,4 +27,4 @@ function Calender(){
         </div>
     )
 }
-export default Calender;
+export default Calendar;
