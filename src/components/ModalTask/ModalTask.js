@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ModalHidden,createTask } from "../../store/Actions";
+import { ModalHidden, createTask } from "../../store/Actions";
 
 import "../../assets/styles/TaskBar.scss";
 
@@ -13,11 +13,11 @@ function ModalTask() {
   const PostTask = (e) => {
     e.preventDefault();
     const params = {
-        name: TaskName,
-        date: TaskDate,
-        done: false,
+      name: TaskName,
+      date: TaskDate,
+      done: false,
     };
-    dispatch(createTask(params))
+    dispatch(createTask(params));
     // axios.post("https://6099176399011f00171401cb.mockapi.io/task", task).then(
     //   (response) => {
     //     console.log(response);
@@ -38,14 +38,16 @@ function ModalTask() {
   };
 
   const dispatch = useDispatch();
-  const ModalVisibility = useSelector((state) => state.ModalVisibility);
+  const ModalVisibility = useSelector(
+    (state) => state.ModalVisibility.visibility
+  );
 
   return (
     <div
       className="ModalTask"
       style={{
-        transform: !ModalVisibility ? "TranslateY(0)" : "TranslateY(-100vh)",
-        opacity: !ModalVisibility ? "1" : "0",
+        transform: ModalVisibility ? "TranslateY(0)" : "TranslateY(-100vh)",
+        opacity: ModalVisibility ? "1" : "0",
       }}
     >
       <div

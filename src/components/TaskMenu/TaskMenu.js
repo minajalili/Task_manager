@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 //action
@@ -17,12 +17,13 @@ function TaskMenu() {
     dispatch(getTasksList());
   }, [dispatch]);
 
-
   const TaskChecked = (e) => {
     tasks.map((task) => {
       if (task.id === e.target.id) {
         task.done = true;
+        return true;
       }
+      return false;
     });
   };
 
@@ -31,8 +32,7 @@ function TaskMenu() {
       <div className="addTasks">
         <button
           onClick={() => {
-            dispatch(ModalVisible);
-            console.log("add task");
+            dispatch(ModalVisible());
           }}
         >
           <i className="fas fa-plus"></i>
