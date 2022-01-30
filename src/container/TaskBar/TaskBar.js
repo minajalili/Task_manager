@@ -2,7 +2,7 @@ import React from "react";
 
 //components
 import UserUi from "../UserUi/UserUi";
-import TaskMenu from "../../components/TaskMenu/TaskMenu";
+import CreateTask from "../../components/CreateTask/CreateTask";
 import CompeletedTasks from "../../components/CompeletedTasks/CompeletedTasks";
 import ModalTask from "../../components/ModalTask/ModalTask";
 
@@ -13,7 +13,7 @@ function TaskBar() {
   return (
     <div className="TaskBar">
       <UserUi />
-      <TaskMenu />
+      <CreateTask />
       <CompeletedTasks />
       <ModalTask />
     </div>

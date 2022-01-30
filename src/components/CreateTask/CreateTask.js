@@ -7,7 +7,7 @@ import { ModalVisible, getTasksList } from "../../store/Actions";
 //style
 import "../../assets/styles/TaskBar.scss";
 
-function TaskMenu() {
+function CreateTask() {
   const dispatch = useDispatch();
   const ToggleList = useSelector((state) => state.ToggleTaskList);
   const TasksList = useSelector((state) => state.TasksList);
@@ -27,7 +27,7 @@ function TaskMenu() {
   };
 
   return (
-    <div className="TaskMenu">
+    <div className="CreateTask">
       <div className="addTasks">
         <button
           onClick={() => {
@@ -71,4 +71,4 @@ function TaskMenu() {
     </div>
   );
 }
-export default TaskMenu;
+export default CreateTask;
