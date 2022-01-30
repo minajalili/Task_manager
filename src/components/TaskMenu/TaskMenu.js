@@ -9,7 +9,7 @@ import "../../assets/styles/TaskBar.scss";
 
 function TaskMenu() {
   const dispatch = useDispatch();
-  const ToggleList = useSelector((state) => state.ToggleTaskList);
+  const ToggleList = useSelector((state) => state.ToggleTaskList.visibility);
   const TasksList = useSelector((state) => state.TasksList);
   const { loading, tasks } = TasksList;
 
@@ -46,7 +46,9 @@ function TaskMenu() {
         }}
       >
         {loading ? (
-          <p> loading...</p>
+          <p style={{ padding: "0.5rem" }}>
+            Loading <i className="fas fa-circle-notch fa-spin"></i>
+          </p>
         ) : (
           tasks.map((task) =>
             !task.done ? (

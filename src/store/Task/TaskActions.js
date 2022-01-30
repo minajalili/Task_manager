@@ -21,7 +21,7 @@ export const taskListFailur = (error) => {
 };
 export const getTasksList = () => async (dispatch) => {
   try {
-    dispatch(taskListRequest);
+    dispatch(taskListRequest());
 
     const { data } = await axios.get("task");
 
@@ -57,9 +57,8 @@ export const createTask = (params) => {
     axios
       .post("task", params)
       .then((response) => {
-        // console.log(response);
         if (!response.data.error) {
-          dispatch(getTasksList);
+          dispatch(getTasksList());
         } else {
           dispatch(createTaskFailur("error in creating the task!"));
         }
