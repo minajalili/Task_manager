@@ -19,7 +19,7 @@ for showing user data, add new task and displaying Tasks list
 &lt;UserUi  /> 
 &lt;TaskMenu  />
 &lt;CompeletedTasks  />
-&lt;ModalTask  />
+&lt;AddTask  />
 
 ## CalendarBar
 The content of this part includes current date, search button, toggle between month and displaying mood of calendar

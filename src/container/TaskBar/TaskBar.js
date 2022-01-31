@@ -4,7 +4,7 @@ import React from "react";
 import UserUi from "../UserUi/UserUi";
 import TaskMenu from "../../components/TaskMenu/TaskMenu";
 import CompeletedTasks from "../../components/CompeletedTasks/CompeletedTasks";
-import ModalTask from "../../components/ModalTask/ModalTask";
+import AddTask from "../../components/AddTask/AddTask";
 
 //styles
 import "../../assets/styles/TaskBar.scss";
@@ -15,7 +15,7 @@ function TaskBar() {
       <UserUi />
       <TaskMenu />
       <CompeletedTasks />
-      <ModalTask />
+      <AddTask />
     </div>
   );
 }

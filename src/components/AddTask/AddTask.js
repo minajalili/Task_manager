@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-// import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-
 import { ModalHidden, createTask } from "../../store/Actions";
-
 import "../../assets/styles/TaskBar.scss";
 
-function ModalTask() {
+function AddTask() {
   const [TaskName, setTaskName] = useState("");
   const [TaskDate, setTaskDate] = useState("");
 
@@ -18,16 +15,9 @@ function ModalTask() {
       done: false,
     };
     dispatch(createTask(params));
-    // axios.post("https://6099176399011f00171401cb.mockapi.io/task", task).then(
-    //   (response) => {
-    //     console.log(response);
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
     setTaskName("");
     setTaskDate("");
+    dispatch(ModalHidden());
   };
 
   const getTaskName = (e) => {
@@ -44,7 +34,7 @@ function ModalTask() {
 
   return (
     <div
-      className="ModalTask"
+      className="AddTask"
       style={{
         transform: ModalVisibility ? "TranslateY(0)" : "TranslateY(-100vh)",
         opacity: ModalVisibility ? "1" : "0",
@@ -66,6 +56,7 @@ function ModalTask() {
             type="text"
             placeholder="Task Name"
             className="TaskName"
+            required
           />
           <input
             onChange={getTaskDate}
@@ -73,16 +64,11 @@ function ModalTask() {
             type="date"
             placeholder="Task Date"
             className="TaskDate"
+            required
           />
         </div>
         <div className="btnTask">
-          <button
-            type="submit"
-            onClick={() => {
-              dispatch(ModalHidden());
-            }}
-            className="TaskSubmit"
-          >
+          <button type="submit" className="TaskSubmit">
             Save
           </button>
         </div>
@@ -90,4 +76,4 @@ function ModalTask() {
     </div>
   );
 }
-export default ModalTask;
+export default AddTask;

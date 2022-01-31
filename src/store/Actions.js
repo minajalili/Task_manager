@@ -1,8 +1,8 @@
-//ModalTask
+//AddTask
 export {
     ModalVisible,
     ModalHidden
-}from './ModalTask/ModalTaskActions'
+}from './AddTask/AddTaskActions'
 
 //Task
 export {

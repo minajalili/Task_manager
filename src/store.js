@@ -3,12 +3,12 @@ import thunk from "redux-thunk";
 
 import TaskListReducer from "./store/TaskList/TaskListReducer";
 import TaskReducer from "./store/Task/TaskReducer";
-import ModalTaskReducer from "./store/ModalTask/ModalTaskReducer";
+import AddTaskReducer from "./store/AddTask/AddTaskReducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducer = combineReducers({
-  ModalVisibility: ModalTaskReducer,
+  ModalVisibility: AddTaskReducer,
   ToggleTaskList: TaskListReducer,
   TasksList: TaskReducer,
 });

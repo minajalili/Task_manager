@@ -1,4 +1,4 @@
-import * as actions from "./ModalTaskActionTypes";
+import * as actions from "./AddTaskActionTypes";
 
 export const ModalVisible = () => {
   return {

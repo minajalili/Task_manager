@@ -1,10 +1,10 @@
-import * as actions from "./ModalTaskActionTypes";
+import * as actions from "./AddTaskActionTypes";
 
 const initialState = {
     visibility : false
 }
 
-const ModalTaskReducer = (state = initialState, action) => {
+const AddTaskReducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.MODAL_VISIBILITY_SHOW:
       console.log('MODAL_VISIBILITY_SHOW');
@@ -23,4 +23,4 @@ const ModalTaskReducer = (state = initialState, action) => {
   }
 };
 
-export default ModalTaskReducer
+export default AddTaskReducer
