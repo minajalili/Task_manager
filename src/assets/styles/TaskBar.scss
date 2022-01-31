@@ -1,7 +1,7 @@
 @mixin fontStyle {
   font-size: 12px;
   font-weight: bold;
-  color: #574c4c;
+  color: #6c6666;
 }
 
 .TaskBar {
@@ -12,6 +12,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  align-items: center;
+  padding: 0.5rem;
 
   .UserUi {
     display: flex;
@@ -46,17 +48,19 @@
   }
 
   .TaskMenu {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
     border-radius: 40px;
     background: #f0f0f0;
     box-shadow: 6px 9px 10px rgba(187, 202, 213, 0.9);
-    width: 90%;
-    margin: 1rem;
+    max-width: 100%;
+    margin: 0.5rem;
     overflow-y: scroll;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
     scrollbar-width: none;
 
     .addTasks {
@@ -135,7 +139,7 @@
     border-radius: 40px;
     background: #f0f0f0;
     box-shadow: 6px 9px 10px rgba(187, 202, 213, 0.9);
-    width: 90%;
+    width: 100%;
     margin: 1rem;
 
     .CompeleteBtn {
