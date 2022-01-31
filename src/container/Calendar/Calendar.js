@@ -10,7 +10,7 @@ function Calendar(){
  
 
     return(
-        <div className="Calendar">
+        <div className="CalendarBoard">
             {
                 test.map(item=>(
                     (item>=1)?
