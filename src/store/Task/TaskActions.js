@@ -28,7 +28,6 @@ export const getTasksList = () => async (dispatch) => {
     dispatch(taskListSuccess(data));
   } catch (error) {
     dispatch(taskListFailur(error.message));
-    // console.log(error);
   }
 };
 
@@ -51,11 +50,11 @@ export const createTaskFailur = (error) => {
   };
 };
 
-export const createTask = (params) => {
+export const createTask = (param) => {
   return (dispatch) => {
     dispatch(createTaskRequest());
     axios
-      .post("task", params)
+      .post("task", param)
       .then((response) => {
         if (!response.data.error) {
           dispatch(getTasksList());
@@ -65,6 +64,45 @@ export const createTask = (params) => {
       })
       .catch((error) => {
         dispatch(createTaskFailur(error.message));
+      });
+  };
+};
+
+// COMPLETED TASK
+
+export const completedTaskRequest = () => {
+  return {
+    type: actions.COMPLETED_TASK_REQUEST,
+  };
+};
+export const completedTaskSuccess = (tasks) => {
+  return {
+    type: actions.COMPLETED_TASK_SUCCESS,
+    payload: tasks,
+  };
+};
+export const completedTaskFailur = (error) => {
+  return {
+    type: actions.CREATE_TASK_FAILUR,
+    payload: error,
+  };
+};
+
+export const completedTask = (param) => {
+  return (dispatch) => {
+    dispatch(completedTaskRequest());
+    axios
+      .delete(`task/${param.id}`)
+      .then((response) => {
+        if (!response.data.error) {
+          dispatch(createTask(param));
+          dispatch(getTasksList());
+        } else {
+          dispatch(completedTaskFailur("error in your request!"));
+        }
+      })
+      .catch((error) => {
+        dispatch(completedTaskFailur(error.message));
       });
   };
 };

@@ -1,16 +1,16 @@
-//AddTask
+//modal Task
 export {
     ModalVisible,
     ModalHidden
 }from './AddTask/AddTaskActions'
 
-//Task
+//TaskList
 export {
     TaskListShow,
     TaskListHidden
 } from "./TaskList/TaskListActions"
 
-//TaskList
+//Task
 export {
     getTasksList,
     createTask,
@@ -20,4 +20,8 @@ export {
     createTaskRequest,
     createTaskSuccess,
     createTaskFailur,
+    completedTask,
+    completedTaskFailur,
+    completedTaskSuccess,
+    completedTaskRequest
 } from "./Task/TaskActions"

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 //action
-import { ModalVisible, getTasksList } from "../../store/Actions";
+import { ModalVisible, getTasksList, completedTask } from "../../store/Actions";
 
 //style
 import "../../assets/styles/TaskBar.scss";
@@ -17,14 +17,11 @@ function TaskMenu() {
     dispatch(getTasksList());
   }, [dispatch]);
 
+  
   const TaskChecked = (e) => {
-    tasks.map((task) => {
-      if (task.id === e.target.id) {
-        task.done = true;
-        return true;
-      }
-      return false;
-    });
+    const param = tasks.filter((task) => task.id === e.target.id);
+    param[0].done = true;
+    dispatch(completedTask(param[0]));
   };
 
   return (

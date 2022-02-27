@@ -1,7 +1,7 @@
-import axios from "axios"
-import { toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const api_url = 'https://6099176399011f00171401cb.mockapi.io/'
+const api_url = "https://61f91473783c1d0017c44910.mockapi.io/taskManager/";
 
 const axiosInstance = axios.create({
   baseURL: api_url,

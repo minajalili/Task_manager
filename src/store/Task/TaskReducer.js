@@ -42,6 +42,23 @@ const TasksListReducer = (state = initialState, action) => {
           loading: false,
           error: action.payload,
         };
+        case actions.COMPLETED_TASK_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actions.COMPLETED_TASK_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        tasks: action.payload,
+      };
+    case actions.COMPLETED_TASK_FAILUR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
