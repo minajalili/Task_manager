@@ -1,0 +1,40 @@
+@mixin fontStyle {
+  font-size: 12px;
+  font-weight: bold;
+  color: #6c6666;
+}
+.Calendar {
+  width: 100%;
+  background: #eaeef0;
+  box-shadow: inset -20px -25px 10px rgb(246, 247, 248);
+  border-radius: 40px;
+  top: 14.2rem;
+  .CalendarBoard {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    height: 75%;
+  }
+  .Calendar-day {
+    border-top: 1px solid #c6c5c5;
+    border-right: 1px solid #c6c5c5;
+    padding: 20px;
+    text-align: center;
+    border-radius: 40px;
+
+    &:hover {
+      background-color: #dbe0e3;
+    }
+
+    p {
+      @include fontStyle;
+      font-size: 10px;
+    }
+  }
+  #day--30,
+  #day--23,
+  #day--16,
+  #day--9,
+  #day--2 {
+    border-right: none;
+  }
+}

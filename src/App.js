@@ -1,20 +1,20 @@
-import './App.scss';
+import { ToastContainer } from 'react-toastify';
+import CalendarBar from './container/CalendarBar/CalendarBar';
+import TaskBar from './container/TaskBar/TaskBar';
+import Calendar from './container/Calendar/Calendar'
 
-//components
-import CalenderBar from './components/CalenderBar';
-import TaskBar from './components/TaskBar';
-import Calender from './components/Calender'
-
+import './assets/styles/App.scss';
 
 function App() {
   return (
     <div className="App">
+       <ToastContainer />
       <div className="tasks">
         <TaskBar/>
       </div>
-      <div className="calender" >
-        <CalenderBar/>
-        <Calender />
+      <div className="Calendar" >
+        <CalendarBar/>
+        <Calendar />
       </div>
     </div>
   );

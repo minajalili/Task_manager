@@ -1,12 +1,12 @@
 import React from 'react';
-import './CalenderBar.scss'
+import '../../assets/styles/CalendarBar.scss'
 
-function CalenderBar(){
+function CalendarBar(){
 
 
     return(
-        <div className="CalenderBar">
-            <div className="Calender--detail">
+        <div className="CalendarBar">
+            <div className="Calendar--detail">
                 <div className="Current--Month">
                     <h1>November 2019</h1>
                 </div>
@@ -19,14 +19,14 @@ function CalenderBar(){
                     <input type="text" placeholder="search"/>
                 </div>
             </div>
-            <div className="Calender--mode">
+            <div className="Calendar--mode">
                 <i className="fas fa-chevron-left" ></i>
-                <button className="Calender--mode--day" >Day</button>
-                <button className="Calender--mode--week" >Week</button>
-                <button className="Calender--mode--month" >Month</button>
+                <button className="Calendar--mode--day" >Day</button>
+                <button className="Calendar--mode--week" >Week</button>
+                <button className="Calendar--mode--month" >Month</button>
                 <i className="fas fa-chevron-right" ></i>
             </div>
-            <div className="Calender--days">
+            <div className="Calendar--days">
                 <p>sun</p>
                 <p>Mon</p>
                 <p>Tue</p>
@@ -38,4 +38,4 @@ function CalenderBar(){
         </div>
     )
 }
-export default CalenderBar;
+export default CalendarBar;
